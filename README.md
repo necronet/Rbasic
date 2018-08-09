@@ -4,4 +4,8 @@ Nothing but a quick set of script to play around with R studio and packages. A s
 
 ## Clustering
 
-Contains example related to unsupervised algorithm for clustering, currently only a naive implementation of k-means that allows to have a simple example of this powerful algorithm.
+Example in regards of building simple implementation of known algorithm for clustering such as k-means and EM maximization.
+
+## Regression
+
+Application of different regression approach in multiple datasets and how to plot the common problems like collinearity or il-form matrix for the normal equation and how to deal with such problems.
