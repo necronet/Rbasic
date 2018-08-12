@@ -98,3 +98,81 @@ ggplot(data = mpg) +
   
   
 # Geometric objects
+  
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy))
+
+ggplot(data = mpg) + geom_smooth(mapping = aes(x = displ, y = hwy))
+
+
+ggplot(data = mpg) + geom_smooth(mapping = aes(x = displ, y = hwy))
+
+ggplot(data = mpg) + geom_smooth(mapping = aes(x = displ, y = hwy, group = drv))
+
+ggplot(data = mpg) +
+  geom_smooth(
+    mapping = aes(x = displ, y = hwy, color = drv),
+    show.legend = FALSE
+  )
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class)) + 
+  geom_smooth(method='loess')
+
+# What geom would you use to draw a line chart? A boxplot? A histogram? An area chart?
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + geom_line()
+ggplot(data = mpg, mapping = aes(x = drv, y = hwy)) + geom_boxplot()
+ggplot(data = mpg, mapping = aes(x = hwy),color=red) + geom_histogram()
+
+# Run this code in your head and predict what the output will look like. 
+# Then, run the code in R and check your predictions.
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE)
+
+# What does show.legend = FALSE do? What happens if you remove it?
+# Why do you think I used it earlier in the chapter?
+# It obviously remove the legend and it was probably use to not make a graph obvious and make the reader think a bit
+
+# What does the se argument to geom_smooth() do?
+# Basically remove the confident level cool shadow that is calculated
+
+
+# Will these two graphs look different? Why/why not?
+#   They are gonna be the same graph different syntax.
+
+#   ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+#   geom_point() + 
+#   geom_smooth()
+# 
+# ggplot() + 
+#   geom_point(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+#   geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy))
+
+# Recreate the R code necessary to generate the following graphs.
+# Graph 1
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + geom_point() + geom_smooth(se=FALSE)
+# Graph 2
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, group=drv)) + geom_point() + geom_smooth(se=FALSE)
+# Graph 3
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, group=drv, color=drv)) + geom_point() + geom_smooth(se=FALSE)
+# Graph 4
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping=aes(color=drv)) + 
+  geom_smooth(se=FALSE)
+# Graph 5
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy,linetype=drv)) + 
+  geom_point(mapping=aes(color=drv)) + 
+  geom_smooth(se=FALSE)
+# Graph 6
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(color='white',stroke=4)  + geom_point(mapping=aes(color=drv),size=3)
+
+
+# 3.7 Statistical transformations
+  
