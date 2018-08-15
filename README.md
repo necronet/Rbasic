@@ -9,3 +9,7 @@ Example in regards of building simple implementation of known algorithm for clus
 ## Regression
 
 Application of different regression approach in multiple datasets and how to plot the common problems like collinearity or il-form matrix for the normal equation and how to deal with such problems.
+
+## R4DS
+
+Example from the book [R for Data science](http://r4ds.had.co.nz/). Includes personal answers and some extra work example always following the book topic of tidyverse.
